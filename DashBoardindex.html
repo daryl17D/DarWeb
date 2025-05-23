@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Head</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #ffffff;
+            color: #ADD8E6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #ADD8E6;
+            color: black;
+            padding: 15px;
+            text-align: center;
+            font-size: 26px;
+            font-family: 'Times New Roman', Times, serif;
+            z-index: 1000; 
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        .nav-bar {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #ADD8E6;
+            border-radius: 5px;
+        }
+
+        .nav-bar a:hover {
+            background-color: #A2C9E2;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #ADD8E6;
+            color: black;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-right: 3px solid #ADD8E6;
+        }
+
+        .sidebar p {
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .sidebar p:hover {
+            color: white;
+            background-color: #ADD8E6;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 150px);
+            gap: 15px;
+            padding: 20px;
+            flex: 1;
+            background-color: #f1f1f1;
+            display: none;
+        }
+
+        .active {
+            display: grid;
+        }
+
+        .box {
+            background-color: #ADD8E6;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            flex-direction: column;
+            text-align: center;
+            color: black;
+        }
+
+        .box:hover {
+            background-color: #A2C9E2;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+            }
+
+            .main-content {
+                grid-template-columns: repeat(2, 1fr);
+            }    
+        }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 22px;
+            }    
+
+            .sidebar p {
+                font-size: 16px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .box {
+                font-size: 16px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 20px;
+            }
+
+            .sidebar {
+                padding: 10px;
+            }
+
+            .sidebar p {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .box {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Sneaker Head Dashboard
+        <div class="nav-bar">
+            <a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\index.html">Home</a>
+			<a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\about.html">About</a>
+			<a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\Contact(1).html">Contact</a>
+			<a href="file:///C:/Users/202411148/OneDrive%20-%20adamson.edu.ph/sample%208.html">Dashboard</a>
+			<a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\gallery.html">Gallery</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <p onclick="showContent('menu')">Menu</p>
+            <p onclick="showContent('program')">Program</p>
+            <p onclick="showContent('routine')">Routine</p>
+            <p onclick="showContent('settings')">Settings</p>
+        </div>
+        <div class="main-content" id="menu">
+            <div class="box">Monday<br>Vans</div>
+            <div class="box">Tuesday<br>New Balance</div>
+            <div class="box">Wednesday<br>Anta</div>
+            <div class="box">Thursday<br>Jordan</div>
+            <div class="box">Friday<br>Nike</div>
+            <div class="box">Saturday<br>Adidas</div>
+        </div>
+        <div class="main-content" id="program">
+            <div class="box">Program Content - Example 1</div>
+            <div class="box">Program Content - Example 2</div>
+        </div>
+        <div class="main-content" id="routine">
+            <div class="box">Shoe - Example 1</div>
+            <div class="box">Shoe - Example 2</div>
+        </div>
+        <div class="main-content" id="settings">
+            <div class="box">Customer Service - Example 1</div>
+            <div class="box"> - Example 2</div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(section) {
+            let sections = document.querySelectorAll('.main-content');
+            sections.forEach(function (sec) {
+                sec.classList.remove('active');
+            });
+
+            let selectedSection = document.getElementById(section);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            showContent('menu');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Head</title>
+	<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+     alert("Welcome to my website!");
+
+    });
+
+   </script>
+    <style>
+        body {
+            font-family: Amamis MT Pro Black, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #BDEDFF;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #BDEDFF;
+            color: #357EC7;
+            padding: 20px;
+            text-align: center;
+            z-index: 100;
+        }
+        nav {
+            background-color: #ADD8E6;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000000;
+        }
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 1;
+        }
+        .blog-posts {
+            flex: 2;
+            margin-right: 20px;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .post {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #ADD8E6;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+            main {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .blog-posts {
+                margin-right: 0;
+            }
+            .sidebar {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+            nav a {
+                font-size: 14px;
+            }
+            .sidebar {
+                padding: 15px;
+            }
+            .post {
+                padding: 15px;
+            }
+        }
+
+        .sidebar ul a {
+            text-decoration: none;
+            color: #357EC7;
+        }
+
+        .sidebar ul a:hover,
+        .sidebar ul a:active {
+            color: #00008B;
+            text-decoration: underline;
+        }
+
+        .sidebar ul a.visited {
+            color: #80008B;
+        }
+        .visited-custom{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SNEAKER HEAD </h1>
+        <p>Sharing knowledge about shoes</p>
+    </header>
+
+    <nav>
+        <a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\index.html">Home</a>
+        <a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\about.html">About</a>
+        <a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\Contact(1).html">Contact</a>
+        <a href="file:///C:/Users/202411148/OneDrive%20-%20adamson.edu.ph/sample%208.html">Dashboard</a>
+		<a href="C:\Users\202411148\OneDrive - adamson.edu.ph\Web Design Principle_Malonzo\gallery.html">Gallery</a>
+    </nav>
+
+    <main>
+        <div class="blog-posts" id="blog">
+            <div class="post">
+                <h2>Latest News Post</h2>
+                <h3>Latest Release of New Shoes</h3>
+                <p>The incoming new shoe are comfortably fit for everyone either kids can fit...</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="post" id="Guide">
+                <h3>SHOES GUIDE: A Beginner's Guide</h3>
+                <p>Here the suggestion for you to fit and select sizes in your shoe...</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h2>What's New</h2>
+            <p>A sneakerhead is someone who has a deep passion for sneakers, whether it’s collecting, trading, or simply appreciating them. Sneakerheads stay up-to-date with the latest sneaker releases, trends, and collaborations, often going to great lengths to secure limited-edition pairs.</p>
+
+            <h2>Popular Topics</h2>
+            <ul>
+                <a href="https://www.nike.com/ph/?cp=35558671848_search_|ph|Core+Brand+-+Core+Brand+-+General+-+EN_EN|MICROSOFT|nike|p77283291904&gclid=2e63ba0a663f1eadaec1dde502929277&gclsrc=3p.ds&ds_rl=1300698&ds_rl=1296529&msclkid=2e63ba0a663f1eadaec1dde502929277&utm_source=bing&utm_medium=cpc&utm_campaign=Core%20Brand%20-%20Core%20Brand%20-%20General%20-%20EN_EN&utm_term=nike&utm_content=General%20-%20Core"><li>Nike & Jordans</li></a>
+                <a href="https://www.newbalance.com/"><li>New Balance</li></a>
+                <a href="https://www.anta.ph/"><li>Anta</li></a>
+                <a href="https://www.adidas.com.ph/?cm_mmc=AdieSEM_Google-_-adidas-SEAPAC-eCom-PPC-B-Brand-Other-Exact-PH-SEAPAC-eCom-Paid_Search_Bing-_-adidas-Brand-Core-Brand-_-adidas-_-dv:eCom&cm_mmc1=PH&cm_mmc2=e&gclid=16873d28647d1dcf99aa5ac700aa2a9c&gclsrc=3p.ds&"><li>Adidas</li></a>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
